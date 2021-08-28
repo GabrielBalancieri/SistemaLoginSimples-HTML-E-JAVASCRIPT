@@ -1,0 +1,84 @@
+<meta charset="UTF-8">
+<style type="text/css">
+body {
+    font: 14px Helvetica, Arial, sans-serif;
+}
+#login {
+    float: left;
+    display: block;
+}
+ul {
+    list-style: none;
+}
+li {
+    float: left;
+    width: 100%;
+    display: block;
+    margin-bottom: 15px;
+}
+label {
+    float: left;
+    width: 100%;
+    display: block;
+    margin-bottom: 10px;
+}
+input[type="text"],
+input[type="password"] {
+    width: 200px;
+    height: 27px;
+    line-height: 27px;
+    border: solid 1px #d2d2d2;
+}
+input[type="submit"] {
+    color: #FFF;
+    width: 100px;
+    height: 27px;
+    cursor: pointer;
+    text-transform: uppercase;
+    border: solid 1px #036;
+    background: #069;
+}
+.erro {
+    color: #900;
+}
+</style>
+<font face="arial"><h1>SISTEMA LOGIN</h1></font>
+<fieldset>   
+<b><font color="black">NOME:</font> &nbsp; <input type="text" id="inputLogin" name="inputLogin"> <br> <br>  
+<font color="black">SENHA:</font> <input id="inputSenha" type="password" autocomplete="current-password"><br> <br></b>
+&emsp; &emsp; &ensp; &ensp; &emsp; &ensp; &ensp; &ensp; &ensp;<button> ENTRAR </button>
+</fieldset>
+<script>
+
+
+    var loginCadastrado = "Usuario1";
+    var senhaCadastrada = "123456";
+
+    var inpuLogin = document.querySelector("inputLogin");
+    var inputSenha = document.querySelector("inputSenha");
+
+    inputLogin = document.getElementById("inputLogin");
+    inputSenha = document.getElementById("inputSenha");
+    inputLogin.focus();
+
+        function login() {
+
+            if(inputLogin.value == loginCadastrado && inputSenha.value == senhaCadastrada) {
+
+                alert("Bem-vindo ao sistema, " + inputLogin.value);
+
+            } else {
+
+                alert("Login inválido. Tente novamente");
+
+            }
+
+            inputLogin.value = "";
+            inputSenha.value = "";
+            inputLogin.focus();
+        }
+
+        var button = document.querySelector("button");
+
+        button.onclick = login;  
+</script>
